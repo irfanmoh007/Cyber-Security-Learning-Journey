@@ -7,7 +7,8 @@ Welcome to my public learning repository! This project serves as a detailed chro
 
 ### Topic 01: Networking Fundamentals
 * [Core Concepts, Protocols, and Addressing](./01-Networking/01-Core-Concepts.md)
-* *... (Future documents will be linked here)*
+* [Protocols Deep Dive (ICMP, DNS, HTTP/HTTPS)](./01-Networking/02-Protocols-Deep-Dive.md)
+
 
 ### Topic 02:  Linux Commands
 * *(Coming Soon)*
