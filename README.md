@@ -12,10 +12,11 @@ Welcome to my public learning repository! This project serves as a detailed chro
 * [**04: VPNs & Wireless Security**](./01-Networking/04-VPNs-and-Wireless-Security.md)
 * [**05: Consolidated Foundations**](./01-Networking/05-Networking-Foundations-Consolidated.md) - *A comprehensive guide combining the key ideas from the earlier documents.*
 
+### Topic 02: Cybersecurity Tools
+* [**01: Practical Traffic Analysis with Wireshark**](./02-Cybersecurity-Tools/01-Wireshark-Practical-Traffic-Analysis.md) - *A deep dive into packet dissection and analysis.*
 
 
-
-### Topic 02:  Linux Commands
+### Topic 03:  Linux Commands
 * *(Coming Soon)*
 
 ---
