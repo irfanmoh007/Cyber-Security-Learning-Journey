@@ -100,8 +100,19 @@ Custom file extension dropped as final indicator
 ## All 9 Sigma Rules
 
 ### Rule 1 — Initial Reconnaissance
-*(First question — detection for initial recon activity)*
-
+title: Malicious HTA Payload Execution
+description: Detecting the execution of a malicious HTA payload from a phishing link
+author: irfan
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection1:
+        EventID: 1
+        Image|endswith: '\mshta.exe'
+        ParentImage|endswith: '\chrome.exe'
+    condition: selection1
+level: high
 ---
 
 ### Rule 2 — Certutil File Download
