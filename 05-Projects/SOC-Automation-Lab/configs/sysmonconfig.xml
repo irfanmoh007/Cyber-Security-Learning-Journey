@@ -1,0 +1,7 @@
+<!-- Sysmon configuration template -->
+<Sysmon schemaversion="4.50">
+  <HashAlgorithms>*</HashAlgorithms>
+  <EventFiltering>
+    <!-- Add rules here -->
+  </EventFiltering>
+</Sysmon>

@@ -1,0 +1,4 @@
+<!-- Local rules for Wazuh -->
+<group name="local,">
+  <!-- Add your custom rules here -->
+</group>

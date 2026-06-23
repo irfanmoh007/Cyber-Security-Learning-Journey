@@ -1,0 +1,6 @@
+{
+  "workflow": {
+    "name": "SOC Automation Workflow",
+    "description": "Trigger alert from SIEM to SOAR"
+  }
+}

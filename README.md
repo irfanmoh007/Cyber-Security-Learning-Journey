@@ -53,3 +53,4 @@ Detailed writeups and walk-throughs for various TryHackMe (THM) security challen
 
 ### 🧪 Topic 05: Hands-on Projects
 * [**SOC Basic Home Lab**](./05-Projects/SOC-Basic-HomeLab/SOC-Basic-HomeLab.md) - *Building a basic Security Operations Center (SOC) home lab with Splunk, VirtualBox, and Metasploit, simulating attacks and analyzing logs.*
+* [**SOC Automation Lab**](./05-Projects/SOC-Automation-Lab/README.md) - *Setting up automated logging, EDR, SIEM, SOAR, and Incident response orchestration using Wazuh, Shuffle, and TheHive.*
