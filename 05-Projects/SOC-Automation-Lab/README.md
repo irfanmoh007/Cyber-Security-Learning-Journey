@@ -536,10 +536,7 @@ Mohamed Irfan
 
 Cybersecurity | SOC Analyst | Detection Engineering | SIEM | SOAR
 
-LinkedIn: \[Add Your LinkedIn]
-
-GitHub: \[Add Your GitHub]
-
+LinkedIn: https://www.linkedin.com/in/mohamedirfans/
 ---
 
 ⭐ If you found this project useful, consider starring the repository.
