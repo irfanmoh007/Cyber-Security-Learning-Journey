@@ -1,0 +1,82 @@
+# TryHackMe — Nmap In-Depth
+
+Reference notes on Nmap switches, scan types, and scripting. This is a flags/concepts cheatsheet, not an investigation walkthrough.
+
+---
+
+## 1. Essential Switches & Flags
+
+| Flag | What it does |
+|---|---|
+| `-sS` | TCP SYN scan ("stealth"/"half-open" scan). Default when run as root/sudo. |
+| `-sT` | TCP Connect scan. Full three-way handshake. Used when you don't have raw packet privileges. |
+| `-sU` | UDP scan. Slower — UDP is stateless, so Nmap infers state from silence or ICMP "destination unreachable" errors. |
+| `-Pn` | Skip host discovery entirely; treat all targets as up. |
+| `-p` | Port targeting. `-p 80` (single), `-p 1000-1500` (range), `-p-` (all 65,535 ports). |
+| `-A` | Aggressive mode — bundles OS detection, version detection, script scan, and traceroute. Noisy. |
+| `-T<0-5>` | Timing template. `-T0` = paranoid/slowest/stealthiest. `-T5` = insane/fastest, but can drop packets on unstable connections. |
+| `-O` | OS detection via TCP/IP stack fingerprinting. |
+| `-sV` | Service version detection. |
+| `-v` / `-vv` | Verbosity — shows open ports as they're found. |
+
+---
+
+## 2. Stealth Scans (NULL, FIN, Xmas)
+
+These manipulate TCP flags to slip past older stateful firewalls, based on **RFC 793** behavior:
+- **Closed port** → must respond with `RST`.
+- **Open port** → packet is simply dropped (no response).
+
+| Flag | Packet sent |
+|---|---|
+| `-sN` (NULL) | No flags set at all. |
+| `-sF` (FIN) | Only `FIN` set (normally used to close a connection, not open one). |
+| `-sX` (Xmas) | `PSH`, `URG`, `FIN` all set together — "lights up" like a Christmas tree in Wireshark. |
+
+⚠️ **Caveats:**
+- Modern IDS easily flags these malformed packets — not actually stealthy against current defenses.
+- **Windows doesn't follow RFC 793 here** — it tends to respond with `RST` regardless of port state, so these scans will often misreport all Windows ports as closed. Don't rely on NULL/FIN/Xmas against Windows targets.
+
+---
+
+## 3. ICMP & Host Discovery
+
+- `-sn` — **Ping sweep**: host discovery only, no port scan.
+
+**Default discovery behavior** (privileged user, scanning outside local subnet) — Nmap sends *all* of:
+1. ICMP Echo Request (ping)
+2. TCP SYN to port 443
+3. TCP ACK to port 80
+4. ICMP Timestamp Request
+
+It only needs **one** of these to get a response to consider the host "up."
+
+**Why hosts get marked "down" incorrectly:** firewalls commonly block inbound ICMP Echo Requests by default. If a target silently drops all four discovery probes, Nmap reports it as down — even if it's actually up and the real port scan would have worked fine.
+
+**Fix:** `-Pn` skips discovery and scans anyway, on the assumption the host is alive. Use this whenever you suspect a host is being marked "down" due to firewall filtering rather than actually being offline.
+
+---
+
+## 4. Nmap Scripting Engine (NSE)
+
+- Written in **Lua**.
+- Scripts are grouped into categories: `safe`, `vuln`, `exploit`, `discovery`, `auth`, etc.
+
+| Usage | Effect |
+|---|---|
+| `-sC` / `--script=default` | Runs the standard safe/default script set. |
+| `--script=vuln` | Runs everything in the `vuln` category. |
+| `--script=<name>` | Runs one specific script, e.g. `--script=ftp-anon`. |
+| `--script-args` | Passes arguments into a script (e.g. giving `ftp-anon.nse` a custom target/expression). |
+
+---
+
+## Quick Recall Cheatsheet
+
+- Need stealth + privileged → `-sS`
+- No raw socket privileges → `-sT`
+- Host shows as down but you suspect a firewall → add `-Pn`
+- Want to know what's running, not just what's open → `-sV` (and `-O` for OS)
+- Going loud/fast for a CTF box → `-A -T4`
+- Want default useful scripts without picking manually → `-sC`
+- Specifically hunting for known vulns → `--script=vuln`
