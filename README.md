@@ -29,6 +29,20 @@ Cyber-Security-Learning-Journey/
 ### 🛠️ Topic 02: Cybersecurity Tools
 * [**01: Practical Traffic Analysis with Wireshark**](./02-Cybersecurity-Tools/01-Wireshark-Practical-Traffic-Analysis.md) - *Dissection and analysis of network packets.*
 * [**02: Advanced Traffic Analysis and Local Traffic**](./02-Cybersecurity-Tools/02-Wireshark-Advanced-Analysis-and-Local-Traffic.md) - *Deep dive into advanced Wireshark traffic analysis.*
+* [**03: Splunk SIEM: Implementation and Log Analysis**](./02-Cybersecurity-Tools/03-Splunk-SIEM-Implementation-and-Log-Analysis.md) - *Enterprise SIEM deployment, inputs.conf, and SPL query analysis.*
+* [**04: Wazuh SIEM & XDR Operations**](./02-Cybersecurity-Tools/04-Wazuh-SIEM-and-XDR-Operations.md) - *Agent-manager architecture, File Integrity Monitoring (FIM), and custom detection rules.*
+* [**05: Windows System Monitor (Sysmon)**](./02-Cybersecurity-Tools/05-Sysmon-Windows-System-Monitor.md) - *Low-level process execution, connection, registry, and DNS telemetry collection.*
+* [**06: Shuffle SOAR and Incident Automation**](./02-Cybersecurity-Tools/06-Shuffle-SOAR-and-Incident-Automation.md) - *Security Orchestration, Automation, and Response playbooks, webhook ingestion, and VirusTotal enrichment.*
+* [**07: TheHive: Incident Response Platform**](./02-Cybersecurity-Tools/07-TheHive-Incident-Response-Platform.md) - *Ticketing, case management, tracking observables, and NIST incident response lifecycle.*
+* [**08: Nmap and Network Reconnaissance**](./02-Cybersecurity-Tools/08-Nmap-and-Network-Reconnaissance.md) - *Active/passive OSINT, TCP SYN scans, UDP port scanning, and NSE scripts.*
+* [**09: Metasploit and MSFvenom Exploitation**](./02-Cybersecurity-Tools/09-Metasploit-and-MSFvenom-Exploitation.md) - *Attack simulation, payload creation (staged/non-staged), handlers, and Meterpreter post-exploitation.*
+* [**10: Burp Suite: Web Application Penetration Testing**](./02-Cybersecurity-Tools/10-Burp-Suite-Web-Pentesting.md) - *Intercepting proxy settings, SSL/TLS CA certificate installation, and Repeater/Intruder attacks.*
+* [**11: CyberChef: The Cyber Swiss Army Knife**](./02-Cybersecurity-Tools/11-CyberChef-The-Cyber-Swiss-Army-Knife.md) - *Data encoding/decoding, regex data parsing, hashing, and defanging threat intelligence indicators.*
+* [**12: Cybersecurity Frameworks: MITRE ATT&CK & Cyber Kill Chain**](./02-Cybersecurity-Tools/12-Cybersecurity-Frameworks-MITRE-ATT-CK-and-Kill-Chain.md) - *Lockheed Martin Kill Chain, MITRE ATT&CK Enterprise TTPs, and threat intelligence.*
+* [**13: Active Directory and Enterprise Security**](./02-Cybersecurity-Tools/13-Active-Directory-and-Enterprise-Security.md) - *Kerberos ticket-granting workflow, AD directory protocols, common attacks (Kerberoasting, PtH, Golden Ticket), and auditing logs.*
+* [**14: Scripting for Cybersecurity: Bash, PowerShell, & Python**](./02-Cybersecurity-Tools/14-Scripting-for-Cybersecurity-Bash-PowerShell-Python.md) - *Utility commands for log parsing, PowerShell host forensics, and custom Python API scripts.*
+* [**15: Aurora EDR and Endpoint Detection**](./02-Cybersecurity-Tools/15-Aurora-EDR-and-Endpoint-Detection.md) - *Lightweight agent, ETW process/memory tracing, and Sigma rule evaluation on endpoints.*
+
 
 ### 🐧 Topic 03: Linux Foundations
 * [**01: Linux Commands**](./03-Linux/01-Linux-Commands.md) - *A reference list of standard Linux navigation, manipulation, and permission commands.*
