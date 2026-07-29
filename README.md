@@ -63,6 +63,7 @@ Cyber-Security-Learning-Journey/
 - [Volatility Room](./04-TryHackMe-Rooms/Volatility-Room.md)
 - [Zeek](./04-TryHackMe-Rooms/Zeek.md)
 - [Pentest Start](./04-TryHackMe-Rooms/pentest-start.md)
+- [Webserver Attacks](./04-TryHackMe-Rooms/webserver-attacks.md)
 
 ### Topic 05: Hands-on Projects
 
